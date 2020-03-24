@@ -1,0 +1,157 @@
+.alert {
+  width: 500px;
+  border-radius: 15px;
+  /*Fade in animation door Gerrit*/
+  animation: fadeIn ease 5s;
+  /*-webkit-animation: fadeIn ease 10s;*/
+  /*-moz-animation: fadeIn ease 10s;*/
+  /*-o-animation: fadeIn ease 10s;*/
+  /*-ms-animation: fadeIn ease 10s;*/ }
+
+.alert p {
+  color: darkgrey; }
+
+.alert button {
+  background-color: pink;
+  position: relative;
+  left: 325px; }
+
+.button__success {
+  animation: bibber 2s infinite;
+  /*animation-name: bibber;*/
+  /*animation-delay: 2s;*/
+  /*animation-fill-mode: forwards;*/
+  /*animation-duration: 0.5s;*/
+  /*animation-iteration-count: 5;*/ }
+
+.alert button:hover {
+  background-color: lightgreen; }
+
+.alert button:visited {
+  background-color: lightgreen; }
+
+.alert button:active {
+  background-color: lightgrey; }
+
+.alert--success {
+  background-color: lightgreen; }
+
+.alert--danger {
+  background-color: red; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes bibber {
+  10%,
+  20%,
+  30%,
+  40%,
+  50% {
+    transform: translateY(0); }
+  15% {
+    transform: translateY(-30px); }
+  25% {
+    transform: translateY(-15px); }
+  35% {
+    transform: translateY(-5px); }
+  45% {
+    transform: translateY(-2px); } }
+
+@media only screen and (max-width: 768px) {
+  .alert p {
+    color: black;
+    font-size: 8px; }
+  .alert button {
+    background-color: pink;
+    position: fixed;
+    top: 0.8%;
+    width: 8%; } }
+
+.alert {
+  width: 500px;
+  border-radius: 15px;
+  /*Fade in animation door Gerrit*/
+  animation: fadeIn ease 5s;
+  /*-webkit-animation: fadeIn ease 10s;*/
+  /*-moz-animation: fadeIn ease 10s;*/
+  /*-o-animation: fadeIn ease 10s;*/
+  /*-ms-animation: fadeIn ease 10s;*/ }
+
+.alert p {
+  color: darkgrey; }
+
+.alert button {
+  background-color: pink;
+  position: relative;
+  left: 325px; }
+
+.button__success {
+  animation: bibber 2s infinite;
+  /*animation-name: bibber;*/
+  /*animation-delay: 2s;*/
+  /*animation-fill-mode: forwards;*/
+  /*animation-duration: 0.5s;*/
+  /*animation-iteration-count: 5;*/ }
+
+.alert button:hover {
+  background-color: lightgreen; }
+
+.alert button:visited {
+  background-color: lightgreen; }
+
+.alert button:active {
+  background-color: lightgrey; }
+
+.alert--success {
+  background-color: lightgreen; }
+
+.alert--danger {
+  background-color: red; }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1; }
+  100% {
+    opacity: 0; } }
+
+@keyframes bibber {
+  10%,
+  20%,
+  30%,
+  40%,
+  50% {
+    transform: translateY(0); }
+  15% {
+    transform: translateY(-30px); }
+  25% {
+    transform: translateY(-15px); }
+  35% {
+    transform: translateY(-5px); }
+  45% {
+    transform: translateY(-2px); } }
+
+@media only screen and (max-width: 768px) {
+  .alert p {
+    color: black;
+    font-size: 8px; }
+  .alert button {
+    background-color: pink;
+    /*position: relative;*/
+    left: 0px;
+    /*width: 100px;*/ } }
