@@ -1,0 +1,62 @@
+﻿@model ReversiApp.Models.Spel
+
+<link href="@Url.Content("~/css/style.min.css")" rel="stylesheet" type="text/css" />
+
+@{
+    ViewData["Title"] = "Spelen";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="@Url.Content("~/js/vendor.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/js/templates.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/js/app.js")" type="text/javascript"></script>
+
+<div id="containerrr">
+    <div id="left">
+        <h2 id="speler1"></h2>
+        <h2 id="punten1"></h2>
+    </div>
+    <div id="right">
+        <h2 id="speler2"></h2>
+        <h2 id="punten2"></h2>
+    </div>
+    <div id="center">
+        <h1>Reversi</h1>
+        <h2>Omschrijving: @Model.Omschrijving</h2>
+        <h2 id="aanDeBeurt"></h2>
+    </div>
+</div>
+
+<center>
+    @{
+
+        if ((bool)ViewData["enigeSpeler"])
+        {
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="@Model.ID" />
+                <input type="submit" value="Join ander spel" class="btn btn-success" />
+            </form>
+            <a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-success">Wijzig spel</a>
+        }
+        else
+        {
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="@Model.ID" />
+                <input type="submit" value="Join ander spel" class="btn btn-success" />
+            </form>
+        }
+    }
+
+
+    <div class="bord">
+        @foreach (Kleur temp in Model.Bord)
+        {
+            <div class="plaats">
+                <div></div>
+            </div>
+        }
+    </div>
+</center>

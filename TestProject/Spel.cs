@@ -59,31 +59,55 @@ namespace TestProject
 
         public bool DoeZet(int rijZet, int kolomZet)
         {
-            if (ZetMogelijk(rijZet, kolomZet))
+            int x = rijZet, y = kolomZet;
+
+            // Zet niet mogelijk of zet niet binnenbord
+            //if (!ZetMogelijk(x, y) || !ZetIsBinnenBord(x, y))
+            //{
+            //    return false;
+            //}
+            if (!ZetIsBinnenBord(x, y))
             {
-
-                int tempX = rijZet, tempY = kolomZet;
-
-                while (ZetIsBinnenBord(tempX, tempY))
-                {
-
-                    Bord[tempX, tempY] = AandeBeurt;
-                    tempX = tempX + richting[laatsteRichting][0];
-                    tempY = tempY + richting[laatsteRichting][1];
-                }
-
-                if (AandeBeurt == Kleur.Wit)
-                {
-                    AandeBeurt = Kleur.Zwart;
-                }
-                else
-                {
-                    AandeBeurt = Kleur.Wit;
-                }
-
-                return true;
+                return false;
             }
-            return false;
+
+            // er zijn 8 richtingen rondom het blokje
+            for (int i = 0; i < 8; i++)
+            {
+                int tempX = x + richting[i][0], tempY = y + richting[i][1];
+
+                // coords binnen het bord
+                if (ZetIsBinnenBord(tempX, tempY))
+                {
+                    // Geldige richting om op te gaan
+                    // VIJANDELIJKE KLEUR
+                    if (Bord[tempX, tempY] != AandeBeurt && Bord[tempX, tempY] != Kleur.Geen)
+                    {
+
+                        while (ZetIsBinnenBord(tempX, tempY))
+                        {
+                            if (Bord[tempX, tempY] == AandeBeurt || Bord[tempX, tempY] == Kleur.Geen)
+                            {
+                                break;
+                            }
+                            //Verander de vijandelijke stenen
+                            Bord[tempX, tempY] = AandeBeurt;
+                            tempX = tempX + richting[i][0];
+                            tempY = tempY + richting[i][1];
+                        }
+                    }
+                }
+            }
+
+            if (AandeBeurt == Kleur.Wit)
+            {
+                AandeBeurt = Kleur.Zwart;
+            }
+            else
+            {
+                AandeBeurt = Kleur.Wit;
+            }
+            return true;
         }
 
         public Kleur OverwegendeKleur()
@@ -157,7 +181,7 @@ namespace TestProject
             int x = rijZet, y = kolomZet;
 
             // Zet is binnen het bord
-            if (ZetIsBinnenBord(x, y) && TenminsteEenSoortgenootOmMijHeen(x, y))
+            if (ZetIsBinnenBord(x, y))
             {
                 // er zijn 8 richtingen rondom het blokje
                 for (int i = 0; i < 8; i++)
@@ -168,12 +192,13 @@ namespace TestProject
                     if (ZetIsBinnenBord(tempX, tempY))
                     {
                         // Geldige richting om op te gaan
+                        // VIJANDELIJKE KLEUR
                         if (Bord[tempX, tempY] != AandeBeurt && Bord[tempX, tempY] != Kleur.Geen)
                         {
 
                             while (ZetIsBinnenBord(tempX, tempY))
                             {
-                                if (Bord[tempX, tempY] == Kleur.Geen || Bord[tempX, tempY] == AandeBeurt)
+                                if (Bord[tempX, tempY] == Kleur.Geen)
                                 {
                                     xTwee = tempX;
                                     yTwee = tempY;
@@ -220,48 +245,5 @@ namespace TestProject
             }
             return false;
         }
-
-        //public bool MeerDanTweeInEenRij(int x, int y)
-        //{
-        //    int minimaalTwee = 1;
-        //    int temp = minimaalTwee;
-        //    // Deze methode kijkt of er tenminste 1 soortgenoot om je heen zit
-        //    // Dus dat de steen niet random ergens neergezet wordt
-        //    for (int i = 0; i < 8; i++)
-        //    {
-        //        int tempX = x + richting[i][0], tempY = y + richting[i][1];
-
-        //        // coords binnen het bord
-        //        if (ZetIsBinnenBord(tempX, tempY))
-        //        {
-        //            while (ZetIsBinnenBord(tempX, tempY))
-        //            {
-        //                if (Bord[tempX, tempY] == AandeBeurt && (tempX != 3 && tempY != 3) && (tempX != 4 && tempY != 4) && (tempX != 3 && tempY != 4) && (tempX != 4 && tempY != 3))
-        //                {
-        //                    minimaalTwee++;
-        //                    tempX = tempX + richting[i][0];
-        //                    tempY = tempY + richting[i][1];
-        //                } else
-        //                {
-        //                    break;
-        //                }
-        //            }
-
-        //            if (minimaalTwee > temp)
-        //            {
-        //                temp = minimaalTwee;
-        //            } else
-        //            {
-        //                minimaalTwee = 1;
-        //            }
-        //        }
-        //    }
-
-        //    if (temp == 2)
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
     }
 }

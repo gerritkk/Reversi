@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ReversiApp.DAL;
+using ReversiApp.Models;
 
 namespace ReversiApp
 {
@@ -27,6 +28,7 @@ namespace ReversiApp
         {
             services.AddControllersWithViews();
             services.AddDbContext<SpelerContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SpelerDatabase")));
+            services.AddDbContext<IdentityContext>(options => options.UseSqlServer(Configuration.GetConnectionString("IdentityContextConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -47,13 +49,16 @@ namespace ReversiApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Speler}/{action=Index}/{id?}");
+                    pattern: "{controller=Spel}/{action=Index}/{id?}");
+                endpoints.MapControllers();
+                endpoints.MapRazorPages();
             });
         }
     }

@@ -5,6 +5,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200324124716_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200324124716_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200324174817_SpelView.cs" />
+    <Compile Remove="Migrations\20200324174817_SpelView.Designer.cs" />
+    <Compile Remove="Migrations\20200326160252_SpelerMigration.cs" />
+    <Compile Remove="Migrations\20200326160252_SpelerMigration.Designer.cs" />
+    <Compile Remove="Migrations\20200326202630_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200326202630_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20200326215911_InitialCreate.cs" />
+    <Compile Remove="Migrations\20200326215911_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\Identity\20200326155840_IdentityMigration.cs" />
+    <Compile Remove="Migrations\Identity\20200326155840_IdentityMigration.Designer.cs" />
+    <Compile Remove="Migrations\Speler\20200326202648_InitialCreate.cs" />
+    <Compile Remove="Migrations\Speler\20200326202648_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\Speler\20200326215935_InitialCreate.cs" />
+    <Compile Remove="Migrations\Speler\20200326215935_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
@@ -13,6 +34,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\Speler\" />
   </ItemGroup>
 
 </Project>

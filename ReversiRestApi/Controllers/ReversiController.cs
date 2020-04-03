@@ -13,15 +13,34 @@ namespace ReversiRestApi.Controllers
     {
         // api/Reversi/<token> GET
         [HttpGet]
+        [Route("{token}")]
         public string Get(string token)
         {
-            return "test";
+            return token;
         }
 
         //Api/Reversi/Beurt/<token>
+        [HttpGet]
+        [Route("Beurt/{token}")]
+        public string GetBeurt(string token)
+        {
+            return token;
+        }
 
-        //Api/Reversi/Zet 
+        //Api/Reversi/Zet/
+        [HttpGet]
+        [Route("Zet/{token}")]
+        public string GetZet(string token)
+        {
+            return token;
+        }
 
-        //Api/Reversi/Opgeven
+        //Api/Reversi/Opgeven/
+        [HttpGet]
+        [Route("Opgeven/{token}")]
+        public string GetOpgeven(string token)
+        {
+            return token;
+        }
     }
 }
