@@ -19,13 +19,13 @@ namespace ReversiApp.Controllers
     {
         private readonly SpelerContext _context;
         //private readonly IdentityContext identityContext;
-        private readonly Speler nuSpelend;
-        private readonly UserManager<Speler> userManager;
+        private readonly ReversiApp.Areas.Identity.Data.Speler nuSpelend;
+        private readonly UserManager<ReversiApp.Areas.Identity.Data.Speler> userManager;
         private readonly IdentityContext identityContext;
         private IHttpContextAccessor accessorContext;
         private HttpContext httpContext { get { return accessorContext.HttpContext; } }
 
-        public SpelController(SpelerContext context, IdentityContext id, UserManager<Speler> um, IHttpContextAccessor accessorContext)
+        public SpelController(SpelerContext context, IdentityContext id, UserManager<ReversiApp.Areas.Identity.Data.Speler> um, IHttpContextAccessor accessorContext)
         {
             _context = context;
             userManager = um;

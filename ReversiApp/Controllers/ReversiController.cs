@@ -21,13 +21,13 @@ namespace ReversiRestApi.Controllers
         private readonly Spel _Context;
         private readonly SpelerContext spelerContext;
         private readonly IdentityContext identityContext;
-        private readonly UserManager<Speler> userManager;
-        private readonly Speler nuSpelend;
+        private readonly UserManager<ReversiApp.Areas.Identity.Data.Speler> userManager;
+        private readonly ReversiApp.Areas.Identity.Data.Speler nuSpelend;
         private IHttpContextAccessor accessorContext;
         //private Kleur[,] tempKleur;
         private HttpContext httpContext { get { return accessorContext.HttpContext; } }
 
-        public ReversiController(SpelerContext context, IdentityContext id, UserManager<Speler> um, IHttpContextAccessor accessorContext)
+        public ReversiController(SpelerContext context, IdentityContext id, UserManager<ReversiApp.Areas.Identity.Data.Speler> um, IHttpContextAccessor accessorContext)
         {
             this.spelerContext = context;
             this.accessorContext = accessorContext;

@@ -122,7 +122,6 @@ C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.0\r
 C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.0\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.0\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\bin\Debug\netcoreapp3.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.0\ReversiApp.csprojAssemblyReference.cache
 C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.0\staticwebassets\ReversiApp.StaticWebAssets.Manifest.cache
 C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.0\staticwebassets\ReversiApp.StaticWebAssets.xml
 C:\Users\Gerrit\source\repos\ReversiRestApi\ReversiApp\obj\Debug\netcoreapp3.0\ReversiApp.MvcApplicationPartsAssemblyInfo.cs

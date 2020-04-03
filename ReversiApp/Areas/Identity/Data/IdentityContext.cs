@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using ReversiApp.Areas.Identity.Data;
 
-namespace ReversiApp.Models
+namespace ReversiApp.Areas.Identity.Data
 {
     public class IdentityContext : IdentityDbContext<Speler>
     {

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ReversiApp.Areas.Identity.Data;
 using ReversiApp.DAL;
-using ReversiApp.Models;
 
 namespace ReversiApp
 {
